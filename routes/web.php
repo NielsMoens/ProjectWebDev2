@@ -17,8 +17,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('layout');
 // });
 
+Route::redirect('/', '/en');
 
-Route::get('/', 'HomeController@home')->name('home');
-Route::get('/about', 'HomeController@about')->name('about');
-Route::get('/contact', 'HomeController@contact')->name('contact');
-Route::get('/donate', 'HomeController@donate')->name('donate');
+Route::group(['prefix' => '{language}'], function () {
+    Route::get('/', 'HomeController@home')->name('home');
+    Route::get('/about', 'HomeController@about')->name('about');
+    Route::get('/contact', 'HomeController@contact')->name('contact');
+    Route::get('/donate', 'HomeController@donate')->name('donate');
+});

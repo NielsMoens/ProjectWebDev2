@@ -13,7 +13,7 @@ class CreatePrivacyContentTable extends Migration
      */
     public function up()
     {
-        Schema::create('_privacy_content', function (Blueprint $table) {
+        Schema::create('privacy_content', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreatePrivacyContentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_privacy_content');
+        Schema::dropIfExists('privacy_content');
     }
 }

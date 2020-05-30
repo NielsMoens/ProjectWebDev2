@@ -4,8 +4,7 @@
 <header class="masthead bg-danger text-white text-center">
     <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src={{ asset('images/remote_logo.png') }} alt="">
-        <!-- Masthead Heading-->
-        <h1 class="masthead-heading mb-0">OctoRemote for OctoPrint</h1>
+        <h1 class="masthead-heading mb-0">{!!$homeContent->{"title_".App::getLocale()}!!}</h1>
         <!-- Icon Divider-->
         <div class="divider-custom divider-light">
             <div class="divider-custom-line"></div>
@@ -18,6 +17,7 @@
             Now available for android. <br>
             Access the Octoprint interface on any android device.
         </p>
+    <button>{{__('home.button')}}</button>
     </div>
 </header>
 @endsection

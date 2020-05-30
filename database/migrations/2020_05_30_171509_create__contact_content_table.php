@@ -13,7 +13,7 @@ class CreateContactContentTable extends Migration
      */
     public function up()
     {
-        Schema::create('_contact_content', function (Blueprint $table) {
+        Schema::create('contact_content', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateContactContentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_contact_content');
+        Schema::dropIfExists('contact_content');
     }
 }

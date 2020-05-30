@@ -13,7 +13,7 @@ class CreateAboutContentTable extends Migration
      */
     public function up()
     {
-        Schema::create('_about_content', function (Blueprint $table) {
+        Schema::create('about_content', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateAboutContentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_about_content');
+        Schema::dropIfExists('about_content');
     }
 }
