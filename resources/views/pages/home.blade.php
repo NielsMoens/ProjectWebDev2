@@ -13,11 +13,8 @@
         </div>
         <!-- Masthead Subheading-->
         <p class="masthead-subheading font-weight-light mb-0">
-            The snappy web interface for your 3D printer. <br>
-            Now available for android. <br>
-            Access the Octoprint interface on any android device.
-        </p>
-    <button>{{__('home.button')}}</button>
+            {!!$homeContent->{"maininfo_".App::getLocale()}!!}
+</p>
     </div>
 </header>
 @endsection

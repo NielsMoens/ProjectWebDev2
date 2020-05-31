@@ -17,7 +17,6 @@ class HomeController extends Controller
     {
         return view('pages.about');
     }
-
     public function contact()
     {
         return view('pages.contact');
@@ -26,6 +25,11 @@ class HomeController extends Controller
     {
         return view('pages.donate');
     }
+    public function privacy()
+    {
+        return view('pages.privacy');
+    }
 }
+
 
 

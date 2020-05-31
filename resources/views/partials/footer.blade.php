@@ -5,21 +5,29 @@
             <div class="row">
                 <!-- Footer Location-->
                 <div class="col-lg-4 mb-5 mb-lg-4">
-                    <h4 class="mb-4">LOCATION</h4>
-                    <p class="pre-wrap lead mb-0">9000 Ghent <br>Belgium</p>
+                    <h4 class="mb-4">{{__('home.f_newsletter')}}</h4>
+                    <form>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <span class="input-group-btn">
+                                <button class="btn btn-success" type="submit">{{__('home.button')}}</button>
+                            </span>
+                        </div>
+                    </form>
                 </div>
                 <!-- Footer Social Icons-->
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h4 class="mb-4">FIND US ON</h4>
-                    <a class="btn btn-outline-light btn-social mx-1" href="">
+                    <h4 class="mb-4">{{__('home.f_find')}}</h4>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://play.google.com/store/apps/details?id=com.kabacon.octoremote">
                         <i class="fab fa-google-play"></i>
                     </a>
                 </div>
                 <!-- Footer About Text-->
                 <div class="col-lg-4">
                     <h4 class="mb-4">PRIVACY</h4>
-                    <a class="pre-wrap text-white lead mb-0" href="#">Terms of service</a>
+                    <a class="pre-wrap text-white lead mb-0" href="{{ route('privacy', ['language' => app()->getLocale()])}}">{{__('home.f_terms')}}</a>
                 </div>
+                
             </div>
         </div>
     </footer>    

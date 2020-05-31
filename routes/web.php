@@ -13,15 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('layout');
-// });
-
 Route::redirect('/', '/en');
 
 Route::group(['prefix' => '{language}'], function () {
     Route::get('/', 'HomeController@home')->name('home');
     Route::get('/about', 'HomeController@about')->name('about');
     Route::get('/contact', 'HomeController@contact')->name('contact');
-    Route::get('/donate', 'HomeController@donate')->name('donate');
+    Route::get('/privacy', 'HomeController@privacy')->name('privacy');
+    Route::get('/newsletter', 'HomeController@newsletter')->name('newsletter');
+    
+    Route::get('newsblog', 'NewsblogController@newsblog')->name('newsblog');
+    Route::get('newsblog/detailpage', 'NewsblogController@detailpage')->name('detailpage');
+
+    Route::get('/donate', 'DonateController@donate')->name('donate');
+    Route::get('/donatepayment', 'DonateController@donate')->name('donatepayment');
+
+    Route::get('/admin', 'AdminController@admin')->name('admin');
+
 });

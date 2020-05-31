@@ -13,8 +13,13 @@
     <!-- Core theme CSS (-->
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <!-- Fonts CSS-->
-    <link  href="{{ asset('css/heading.css') }}" rel="stylesheet">
-    <link  href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/heading.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/blog-home.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,16 +32,24 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/">Home</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/">{{__('home.h_home')}}</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('about', ['language' => app()->getLocale()])}}">About</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="{{ route('about', ['language' => app()->getLocale()])}}">{{__('home.h_about')}}</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('contact', ['language' => app()->getLocale()])}}">Contact</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="{{ route('contact', ['language' => app()->getLocale()])}}">Contact</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('donate', ['language' => app()->getLocale()])}}">Donate</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="{{ route('donate', ['language' => app()->getLocale()])}}">{{__('home.h_donate')}}</a>
+                    </li>
+
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="{{ route('newsblog', ['language' => app()->getLocale()])}}">{{__('home.h_newsblog')}}</a>
                     </li>
                 </ul>
             </div>
