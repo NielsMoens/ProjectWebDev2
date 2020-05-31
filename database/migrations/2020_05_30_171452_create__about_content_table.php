@@ -15,6 +15,12 @@ class CreateAboutContentTable extends Migration
     {
         Schema::create('about_content', function (Blueprint $table) {
             $table->id();
+            $table->text('title_nl');
+            $table->text('title_en');
+            $table->text('abouttitle_nl');
+            $table->text('abouttitle_en');
+            $table->text('aboutcontent_nl');
+            $table->text('aboutcontent_en');
             $table->timestamps();
         });
     }

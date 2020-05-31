@@ -15,8 +15,8 @@ class CreateNewsblogContent extends Migration
     {
         Schema::create('newsblog_content', function (Blueprint $table) {
             $table->id();
-            $table->string('posttitle_nl');
-            $table->string('posttitle_en');
+            $table->text('posttitle_nl');
+            $table->text('posttitle_en');
             $table->text('postcontent_nl');
             $table->text('postcontent_en');
             $table->text('postdate');

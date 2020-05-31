@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contact_content extends Model
 {
-    //
+    protected $table = 'contact_content';
+    protected $fillable = ['title_nl', 'title_en', 'subtitle_nl', 'subtitle_en', 'content_nl', 'content_en'];
 }

@@ -2,12 +2,16 @@
 
 return [
     //elements
+    "postedon"=>"Posted on",
+    "donamount"=>"Donated amount :",
+
+     //buttons
     "button"=>"Submit",
     "details"=>"Read more",
-    "postedon"=>"Posted on",
+    "sendm"=>"Verzenden",
+    "donate"=>"Donate",
 
     //footer
-    "f_nlform"=> "Enter your email",
     "f_find" => "FIND US ON",
     "f_newsletter" => "NEWSLETTER",
     "f_terms" => "Terms of service",
@@ -16,5 +20,11 @@ return [
     "h_home" => "Home",
     "h_about" => "About",
     "h_donate" => "Donate",
-    "h_newsblog" => "Newsblog"
+    "h_newsblog" => "Newsblog",
+
+    //forms
+    "name" => "Name",
+    "email" => "Email",
+    "phone" => "Phone",
+    "message" => "Message"
 ];

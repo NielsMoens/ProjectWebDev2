@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Donate_content;
 use Illuminate\Http\Request;
 
 class DonateController extends Controller
 {
     public function donate ()
     {
-        return view('pages.donate');
+        $donateContent = Donate_content::firstOrFail();
+        return view('pages.donate',compact('donateContent'));
     }
 }

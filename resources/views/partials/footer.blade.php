@@ -8,7 +8,7 @@
                     <h4 class="mb-4">{{__('home.f_newsletter')}}</h4>
                     <form>
                         <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <input type="email" class="form-control" placeholder={{__('home.email')}}>
                             <span class="input-group-btn">
                                 <button class="btn btn-success" type="submit">{{__('home.button')}}</button>
                             </span>

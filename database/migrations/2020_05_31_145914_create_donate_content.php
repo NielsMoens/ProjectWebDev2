@@ -15,6 +15,14 @@ class CreateDonateContent extends Migration
     {
         Schema::create('donate_content', function (Blueprint $table) {
             $table->id();
+            $table->text('title_nl');
+            $table->text('title_en');
+            $table->text('subtitle_nl');
+            $table->text('subtitle_en');
+            $table->text('featuredtitle_nl');
+            $table->text('featuredtitle_en');
+            $table->text('donatorname');
+            $table->text('donationamount');
             $table->timestamps();
         });
     }

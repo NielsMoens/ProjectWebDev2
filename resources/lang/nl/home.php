@@ -1,12 +1,15 @@
 <?php
-
 return [
     //elements
+    "postedon"=>"Geplaatst op ",
+    "donamount"=>"Gedoneerd bedrag:",
+
+    //buttons
     "button"=>"verzenden",
     "details"=>"Lees meer",
-    "postedon"=>"Geplaatst op ",
-    "nlform"=> "Plaats uw email",
-
+    "sendm"=>"Verzenden",
+    "donate"=>"Doneer",
+    
     //footer
     "f_newsletter" => "NIEUWSBRIEF",
     "f_find" => "VIND ONS OP",
@@ -17,5 +20,11 @@ return [
     "h_home" => "Start",
     "h_about" => "Over",
     "h_donate" => "Doneer",
-    "h_newsblog" => "Nieuwsblog"
+    "h_newsblog" => "Nieuwsblog",
+
+     //forms
+    "name" => "Naam",
+    "email" => "Email",
+    "phone" => "Telefoonnummer",
+    "message" => "Beschijving"
 ];

@@ -15,6 +15,12 @@ class CreateContactContentTable extends Migration
     {
         Schema::create('contact_content', function (Blueprint $table) {
             $table->id();
+            $table->text('title_nl');
+            $table->text('title_en');
+            $table->text('subtitle_nl');
+            $table->text('subtitle_en');
+            $table->text('content_nl');
+            $table->text('content_en');
             $table->timestamps();
         });
     }
