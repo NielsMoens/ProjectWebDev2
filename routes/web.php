@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 
 Route::redirect('/', '/en');
 
@@ -27,7 +29,28 @@ Route::group(['prefix' => '{language}'], function () {
 
     Route::get('/donate', 'DonateController@donate')->name('donate');
     Route::get('/donatepayment', 'DonateController@donate')->name('donatepayment');
-
-    Route::get('/admin', 'AdminController@admin')->name('admin');
-
+    // Route::get('/{slug}', 'PagesController@getPage')->name('page');
 });
+
+Route::group(['prefix' => 'admin'], function () {
+    Auth::routes();
+    Route::get('/index', 'AdminController@adminPage')->name('admin');
+    Route::get('/pages/edithome', 'AdminController@getEditHomePage')->name('pages.edithome');
+    Route::post('/pages/edithome', 'AdminController@postEditHomePage')->name('pages.edithome.post');
+
+
+    Route::get('/pages/create', 'AdminController@getCreatePage')->name('pages.create');
+    Route::post('/pages/create', 'AdminController@postCreatePage')->name('pagescreate.post');
+    Route::get('/pages/edit/{page}', 'AdminController@getEditPage')->name('pages.edit');
+    Route::post('/pages/edit/{page}', 'AdminController@postEditPage')->name('pages.edit.post');
+    Route::post('/pages/delete', 'AdminController@postDeletePage')->name('pages.delete');
+
+    Route::post('/pages/delete', 'AdminController@postDeletePage')->name('pages.delete');
+
+    
+
+    
+});
+// Route::post('/home', 'HomeController@home')->name('home');
+Route::get('/{slug}', 'PagesController@getPage')->name('page');
+

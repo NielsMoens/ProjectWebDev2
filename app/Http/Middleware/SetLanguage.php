@@ -15,7 +15,12 @@ class SetLanguage
      */
     public function handle($request, Closure $next)
     {
-        \App::setLocale($request->language);
+        if($request->language == 'nl' || $request->language == 'en'){
+            \App::setLocale($request->language);
+        }
+        else{
+            abort('404');
+        }
         return $next($request);
     }
 }

@@ -11,6 +11,7 @@ use App\Privacy_content;
 
 class HomeController extends Controller
 {
+    
     public function home()
     {   
         //firstorfail -> object, get->arra

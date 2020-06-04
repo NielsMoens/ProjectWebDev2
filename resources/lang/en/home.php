@@ -1,3 +1,4 @@
+
 <?php
 
 return [
@@ -21,6 +22,8 @@ return [
     "h_about" => "About",
     "h_donate" => "Donate",
     "h_newsblog" => "Newsblog",
+    "h_admin" => "Admin",
+    
 
     //forms
     "name" => "Name",

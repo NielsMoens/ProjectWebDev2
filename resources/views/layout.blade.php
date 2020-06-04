@@ -1,5 +1,5 @@
 @include('partials.header')
-<div >
+<div>
     @yield('content')
 </div>
 @include('partials.footer')
