@@ -14,7 +14,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1>Edit the "{{$page->template}}" Page</h1>
+            <h1>Make new page</h1>
         </div>
     </div>
     <!-- Content Wrapper -->

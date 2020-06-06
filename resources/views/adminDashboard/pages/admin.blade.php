@@ -40,7 +40,7 @@
         <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin', ['language' => app()->getLocale()])}}">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin')}}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -52,40 +52,13 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{{route('admin')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                pages
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-globe"></i>
-                    <span>Home</span>
-                </a>
-
-                {{-- mss nog nodig  --}}
-                {{-- <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
-                    </div>
-                </div> --}}
-            </li>
         </ul>
         <!-- End of Sidebar -->
 
@@ -119,7 +92,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
+                                                            document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -145,27 +118,29 @@
                     </div>
 
                     <!-- Content Row -->
-                    <div class="row">
-                        <div class="col-12"><a href="{{route('pages.create')}}" class="btn btn-warning">Add Page</a>
-                        </div>
-                    </div>
+                    {{-- Add a page --}}
                     <div class="row">
                         <div class="col-xl col-md-2 mb-4">
                             <div class="card border-left-success shadow h-100 ">
                                 <div class="card-body">
-                                    <div class=" no-gutters align-items-center">
+                                    <div class=" no-gutters align">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Web pages <i class="fas fa-globe"></i></div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                Web pages <i class="fas fa-globe"></i>
+                                                <div class="row">
+                                                    <div class="col-12"><a href="{{route('pages.create')}}" class="btn btn-warning">Add Page</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="h5  font-weight-bold text-gray-800">
                                                 <table class="table table-striped">
                                                     <thead>
                                                         <tr>
-                                                            <th>Template</th>
-                                                            <th>Title_nl</th>
-                                                            <th>Title_en</th>
-                                                            <th>Intro_nl</th>
-                                                            <th>Intro_en</th>
+                                                            <th>template</th>
+                                                            <th>title_nl</th>
+                                                            <th>title_en</th>
+                                                            <th>intro_nl</th>
+                                                            <th>intro_en</th>
                                                             <th></th>
                                                         </tr>
                                                     </thead>
@@ -197,8 +172,7 @@
                                                                 </a>
                                                                 <form action="{{route('pages.delete')}}" method="post">
                                                                     @csrf
-                                                                    <input type="hidden" name="page_id"
-                                                                        value="{{ $page->id}}">
+                                                                    <input type="hidden" name="id" value="{{ $page->id }}">
                                                                     <button class="btn-danger">
                                                                         Delete
                                                                     </button>
@@ -216,8 +190,12 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Existing pages</h1>
+                    </div>
+                    {{-- edit home page --}}
                     <div class="row">
                         <div class="col-xl col-md-2 mb-4">
                             <div class="card border-left-success shadow h-100 ">
@@ -225,55 +203,363 @@
                                     <div class=" no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Editpages <i class="fas fa-globe"></i></div>
+                                                Home page<i class="fas fa-globe"></i></div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <table class="table table-striped">
+                                                <table class="table table-striped ">
                                                     <thead>
                                                         <tr>
-                                                            <th>Title_nl</th>
-                                                            <th>Title_en</th>
-                                                            <th>Intro_nl</th>
-                                                            <th>Intro_en</th>
+                                                            <th>title_nl</th>
+                                                            <th>title_en</th>
+                                                            <th>maininfo_nl</th>
+                                                            <th>maininfo_en</th>
                                                             <th></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @foreach($pages as $page)
                                                         <tr>
                                                             <td>
-                                                                {{$page->template}}
+                                                                {{$homeContent->title_nl}}
                                                             </td>
                                                             <td>
-                                                                {{$page->title_nl}}
+                                                                {{$homeContent->title_en}}
                                                             </td>
                                                             <td>
-                                                                {{$page->title_en}}
+                                                                {{Str::limit($homeContent->maininfo_nl, 50)}}
                                                             </td>
                                                             <td>
-                                                                {{Str::limit($page->intro_nl, 50)}}
+                                                                {{Str::limit($homeContent->maininfo_en, 50)}}
                                                             </td>
                                                             <td>
-                                                                {{Str::limit($page->intro_en, 50)}}
-                                                            </td>
-                                                            <td>
-                                                                <a href="{{route('pages.edit',  $page->id)}}">
+                                                                <a href="{{route('pages.edithome',  $homeContent->id)}}">
                                                                     @csrf
                                                                     <input type="hidden" name="" value="">
                                                                     <button class="btn-success">
                                                                         Edit
                                                                     </button>
                                                                 </a>
-                                                                <form action="{{route('pages.delete')}}" method="post">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    {{-- edit aboutpage --}}
+                    <div class="row">
+                        <div class="col-xl col-md-2 mb-4">
+                            <div class="card border-left-success shadow h-100 ">
+                                <div class="card-body">
+                                    <div class=" no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                About page <i class="fas fa-globe"></i></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                <table class="table table-striped ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>title_nl</th>
+                                                            <th>title_en</th>
+                                                            <th>abouttitle_nl</th>
+                                                            <th>abouttitle_en</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                {{$aboutContent->title_nl}}
+                                                            </td>
+                                                            <td>
+                                                                {{$aboutContent->title_en}}
+                                                            </td>
+                                                            <td>
+                                                                {{Str::limit($aboutContent->abouttitle_nl, 50)}}...
+                                                            </td>
+                                                            <td>
+                                                                {{Str::limit($aboutContent->abouttitle_en, 50)}}...
+                                                            </td>
+                                                            <td>
+                                                                <a href="{{route('pages.editabout',  $aboutContent->id)}}">
                                                                     @csrf
-                                                                    <input type="hidden" name="page_id"
-                                                                        value="{{ $page->id}}">
-                                                                    <button class="btn-danger">
-                                                                        Delete
+                                                                    <input type="hidden" name="" value="">
+                                                                    <button class="btn-success">
+                                                                        Edit
                                                                     </button>
-                                                                </form>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    {{-- edit contact page --}}
+                    <div class="row">
+                        <div class="col-xl col-md-2 mb-4">
+                            <div class="card border-left-success shadow h-100 ">
+                                <div class="card-body">
+                                    <div class=" no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Contact page <i class="fas fa-globe"></i></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                <table class="table table-striped ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>title_nl</th>
+                                                            <th>title_en</th>
+                                                            <th>subtitle_nl</th>
+                                                            <th>subtitle_en</th>
+                                                            <th>content_nl</th>
+                                                            <th>content_en</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                {{$contactContent->title_nl}}
+                                                            </td>
+                                                            <td>
+                                                                {{$contactContent->title_en}}
+                                                            </td>
+                                                            <td>
+                                                                {{Str::limit($contactContent->subtitle_nl, 50)}}...
+                                                            </td>
+                                                            <td>
+                                                                {{Str::limit($contactContent->subtitle_en, 50)}}...
+                                                            </td>
+                                                            <td>
+                                                                {{Str::limit($contactContent->content_nl, 50)}}...
+                                                            </td>
+                                                            <td>
+                                                                {{Str::limit($contactContent->content_en, 50)}}...
+                                                            </td>
+                                                            <td>
+                                                                <a href="{{route('pages.editcontact',  $contactContent->id)}}">
+                                                                    @csrf
+                                                                    <input type="hidden" name="" value="">
+                                                                    <button class="btn-success">
+                                                                        Edit
+                                                                    </button>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    {{-- edit newsblog page --}}
+                    <div class="row">
+                        <div class="col-xl col-md-2 mb-4">
+                            <div class="card border-left-success shadow h-100 ">
+                                <div class="card-body">
+                                    <div class=" no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Newsblog Page <i class="fas fa-globe"></i></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                <div class="row">
+                                                    <div class="col-12"><a href="{{route('pages.addnewsblog')}}" class="btn btn-warning">Add Newsblog Post</a>
+                                                    </div>
+                                                </div>
+                                                <table class="table table-striped ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>posttitle_nl</th>
+                                                            <th>posttitle_en</th>
+                                                            <th>postcontent_nl</th>
+                                                            <th>postcontent_en</th>
+                                                            <th>postdate</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach($newsblogContent as $blog)
+                                                        <tr>
+                                                            <td>
+                                                                {{$blog->posttitle_nl}}
+                                                            </td>
+                                                            <td>
+                                                                {{$blog->posttitle_en}}
+                                                            </td>
+                                                            <td>
+                                                                {{Str::limit($blog->postcontent_nl, 50)}}...
+                                                            </td>
+                                                            <td>
+                                                                {{Str::limit($blog->postcontent_en, 50)}}...
+                                                            </td>
+                                                            <td>
+                                                                {{Str::limit($blog->postdate, 50)}}...
+                                                            </td>
+                                                            <td>
+                                                                <a href="{{route('pages.editnewsblog',  $blog->id)}}">
+                                                                    @csrf
+                                                                    <input type="hidden" name="" value="">
+                                                                    <button class="btn-success">
+                                                                        Edit
+                                                                    </button>
+                                                                </a>
                                                             </td>
                                                         </tr>
                                                         @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    {{-- edit donation page --}}
+                    <div class="row">
+                        <div class="col-xl col-md-2 mb-4">
+                            <div class="card border-left-success shadow h-100 ">
+                                <div class="card-body">
+                                    <div class=" no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Donate Page <i class="fas fa-globe"></i></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                <table class="table table-striped ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>title_nl</th>
+                                                            <th>title_en</th>
+                                                            <th>subtitle_nl</th>
+                                                            <th>subtitle_en</th>
+                                                            <th>featuredtitle_nl</th>
+                                                            <th>featuredtitle_en</th>
+                                                            <th>donatorname</th>
+                                                            <th>Donationamount</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                {{$donateContent->title_nl}}
+                                                            </td>
+                                                            <td>
+                                                                {{$donateContent->title_en}}
+                                                            </td>
+                                                            <td>
+                                                                {{Str::limit($donateContent->subtitle_nl, 50)}}...
+                                                            </td>
+                                                            <td>
+                                                                {{Str::limit($donateContent->subtitle_en, 50)}}...
+                                                            </td>
+                                                            <td>
+                                                                {{Str::limit($donateContent->featuredtitle_nl, 50)}}...
+                                                            </td>
+                                                            <td>
+                                                                {{Str::limit($donateContent->featuredtitle_en, 50)}}...
+                                                            </td>
+                                                            <td>
+                                                                {{Str::limit($donateContent->donatorname, 50)}}...
+                                                            </td>
+                                                            <td>
+                                                                {{Str::limit($donateContent->donationamount, 50)}}...
+                                                            </td>
+                                                            <td>
+                                                                <a href="{{route('pages.editdonate',  $donateContent->id)}}">
+                                                                    @csrf
+                                                                    <input type="hidden" name="" value="">
+                                                                    <button class="btn-success">
+                                                                        Edit
+                                                                    </button>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- edit privacy page  --}}
+                    <div class="row">
+                        <div class="col-xl col-md-2 mb-4">
+                            <div class="card border-left-success shadow h-100 ">
+                                <div class="card-body">
+                                    <div class=" no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Privacy Page <i class="fas fa-globe"></i></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                <table class="table table-striped ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>title_nl</th>
+                                                            <th>title_en</th>
+                                                            <th>subtitle_nl</th>
+                                                            <th>subtitle_en</th>
+                                                            <th>content_nl</th>
+                                                            <th>content_en</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                {{$privacyContent->title_nl}}
+                                                            </td>
+                                                            <td>
+                                                                {{$privacyContent->title_en}}
+                                                            </td>
+                                                            <td>
+                                                                {{Str::limit($privacyContent->subtitle_nl, 50)}}...
+                                                            </td>
+                                                            <td>
+                                                                {{Str::limit($privacyContent->subtitle_en, 50)}}...
+                                                            </td>
+                                                            <td>
+                                                                {{Str::limit($privacyContent->content_nl, 50)}}...
+                                                            </td>
+                                                            <td>
+                                                                {{Str::limit($privacyContent->content_en, 50)}}...
+                                                            </td>
+                                                            <td>
+                                                                <a href="{{route('pages.editprivacy',  $privacyContent->id)}}">
+                                                                    @csrf
+                                                                    <input type="hidden" name="" value="">
+                                                                    <button class="btn-success">
+                                                                        Edit
+                                                                    </button>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -293,10 +579,10 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <footer class="sticky-footer ">
                 <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2019</span>
+                    <div class=" text-center ">
+                        Copyright &copy; Niels Moens 2020
                     </div>
                 </div>
             </footer>
@@ -313,25 +599,6 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>

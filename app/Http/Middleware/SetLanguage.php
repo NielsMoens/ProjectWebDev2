@@ -18,9 +18,9 @@ class SetLanguage
         if($request->language == 'nl' || $request->language == 'en'){
             \App::setLocale($request->language);
         }
-        else{
-            abort('404');
-        }
+        // else{
+        //     abort('404');
+        // }
         return $next($request);
     }
 }
