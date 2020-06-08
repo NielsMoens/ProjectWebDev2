@@ -45,13 +45,13 @@ class DonateController extends Controller
         ]);
         $payment = Mollie::api()->payments->get($payment->id);
         
-        $payment = [
+        $donator = [
             "donatorname" => $r->donatorname,
             "donatoremail" => $r->donatoremail,
             "donatoramount" => $r->donatoramount,
             "donatormessage" => $r->donatormessage,
         ];
-        Donation_info::create($payment);
+        Donation_info::create($donator);
         
         // redirect customer to Mollie checkout page
         return redirect($payment->getCheckoutUrl(), 303);

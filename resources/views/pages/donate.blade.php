@@ -62,7 +62,7 @@
                     @foreach ($donationInfo as $donatorInfo)
                     <div class="item col-md-6">
                         <h3>{!!$donatorInfo->donatorname!!}</h3>
-                        <p>{{__('home.donamount')}} {{$donatorInfo->donatornamount}}</p>
+                        <p>{{__('home.donamount')}} <span>{!!$donatorInfo->donatoramount!!}</span></p>
                         <p>{{__('home.donmessage')}} <span>{!!$donatorInfo->donatormessage!!}</span> </p>
                     </div>
                     @endforeach
