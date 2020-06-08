@@ -422,6 +422,13 @@
                                                                         Edit
                                                                     </button>
                                                                 </a>
+                                                                <form action="{{route('pages.deletenewsblog')}}" method="post">
+                                                                    @csrf
+                                                                    <input type="hidden" name="id" value="{{ $blog->id }}">
+                                                                    <button class="btn-danger">
+                                                                        Delete
+                                                                    </button>
+                                                                </form>
                                                             </td>
                                                         </tr>
                                                         @endforeach

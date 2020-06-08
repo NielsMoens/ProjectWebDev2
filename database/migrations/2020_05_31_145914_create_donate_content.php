@@ -21,8 +21,6 @@ class CreateDonateContent extends Migration
             $table->text('subtitle_en');
             $table->text('featuredtitle_nl');
             $table->text('featuredtitle_en');
-            $table->text('donatorname');
-            $table->text('donationamount');
             $table->timestamps();
         });
     }

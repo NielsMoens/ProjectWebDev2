@@ -213,6 +213,11 @@ class AdminController extends Controller
 
         return redirect()->route('admin');
     }
+    public function getdeleteNewsblog(request $r)
+    {
+        Newsblog_content::find($r->id)->delete();
+        return redirect()->route('admin');
+    }
 
 
     //  edit donate page

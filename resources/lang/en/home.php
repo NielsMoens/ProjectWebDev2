@@ -29,5 +29,10 @@ return [
     "name" => "Name",
     "email" => "Email",
     "phone" => "Phone",
-    "message" => "Message"
+    "message" => "Message",
+    "amount" => "Donation amount",
+
+    //donation
+    "donmessage"=>"Message: "
+
 ];

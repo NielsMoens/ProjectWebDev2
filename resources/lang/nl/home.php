@@ -26,5 +26,9 @@ return [
     "name" => "Naam",
     "email" => "Email",
     "phone" => "Telefoonnummer",
-    "message" => "Beschijving"
+    "message" => "Beschijving",
+    "amount" => "Donatie bedrag: "
+
+    //donation
+    "donmessage"=>"Bericht: "
 ];
