@@ -17,7 +17,7 @@ class WebhookController extends Controller
         $payment = Mollie::api()->payments()->get($request->id);
 
         if ($payment->isPaid()) {
-            // /webhook/mollie Internal Server Error TODO
+            // /webhook/mollie 500 Internal Server Error TODO
             // $donator = new Donation_info();
             // $donator->donatorname = $payment->metadata->donatorname;
             // $donator->donatoremail = $payment->metadata->donatoremail;

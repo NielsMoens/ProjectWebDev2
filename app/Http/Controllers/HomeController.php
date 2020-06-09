@@ -8,6 +8,8 @@ use App\Donate_content;
 use Illuminate\Http\Request;
 use App\Home_content;
 use App\Privacy_content;
+use Symfony\Component\HttpFoundation\RequestStack;
+use newsletter;
 
 class HomeController extends Controller
 {
@@ -37,8 +39,8 @@ class HomeController extends Controller
     {
         $privacyContent = Privacy_content::firstOrFail();
         return view('pages.privacy',compact('privacyContent'));
-        
     }
+    
 }
 
 

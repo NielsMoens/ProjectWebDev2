@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHomeContentTable extends Migration
+class CreateNewsletterData extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateHomeContentTable extends Migration
      */
     public function up()
     {
-        Schema::create('home_content', function (Blueprint $table) {
+        Schema::create('newsletter_data', function (Blueprint $table) {
             $table->id();
-            $table->text('title_nl');
-            $table->text('title_en');
+            $table->text('email');
+            $table->timestamps();
         });
-        
     }
 
     /**
@@ -28,7 +27,6 @@ class CreateHomeContentTable extends Migration
      */
     public function down()
     {
-        
-        Schema::dropIfExists('home_content');
+        Schema::dropIfExists('newsletter_data');
     }
 }

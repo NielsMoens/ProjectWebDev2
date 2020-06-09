@@ -33,6 +33,8 @@ return [
     "amount" => "Donation amount",
 
     //donation
-    "donmessage"=>"Message: "
+    "donmessage"=>"Message:",
 
+    //newsletter
+    "subs"=>"Thanks for subscribing"
 ];

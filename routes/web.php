@@ -22,19 +22,22 @@ Route::redirect('/', '/en');
 
 //  Language group with routes of existing webpages
 Route::group(['prefix' => '{language}'], function () {
+    //  Routes HomeController
     Route::get('/', 'HomeController@home')->name('home');
     Route::get('/about', 'HomeController@about')->name('about');
     Route::get('/contact', 'HomeController@contact')->name('contact');
     Route::get('/privacy', 'HomeController@privacy')->name('privacy');
-    Route::get('/newsletter', 'HomeController@newsletter')->name('newsletter');
+    //  newsblog
     Route::get('/newsblog', 'NewsblogController@newsblog')->name('newsblog');
     Route::get('/newsblog/detailpage', 'NewsblogController@detailpage')->name('detailpage');
-    // Route::get('/{slug}', 'PagesController@getPage')->name('page');
+    //  Route::get('/{slug}', 'PagesController@getPage')->name('page');
     Route::get('/donate', 'DonateController@donate')->name('donate');
-    // Route::post('/donate', 'DonateController@postDonate')->name('donate.post');
+    //  Route::post('/donate', 'DonateController@postDonate')->name('donate.post');
     Route::post('/donate', 'DonateController@postDonatePayment')->name('donate.payment');
     Route::get('/donate/paymentsucces', 'DonateController@getSucces')->name('donate.succespayment');
 });
+Route::post('/newsletter', 'NewsletterController@postNewsletter')->name('newsletter.post');
+Route::get('/newsletter/subscribed', 'NewsletterController@subscribedNewsletter')->name('newsletter.subscribed');
 
 // Admin page routes 
 Route::group(['prefix' => 'admin'], function () {

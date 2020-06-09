@@ -27,8 +27,11 @@ return [
     "email" => "Email",
     "phone" => "Telefoonnummer",
     "message" => "Beschijving",
-    "amount" => "Donatie bedrag: "
+    "amount" => "Donatie bedrag:",
 
     //donation
-    "donmessage"=>"Bericht: "
+    "donmessage"=>"Bericht:",
+
+    //newsletter
+    "subs"=>"Bedankt voor u aan te melden voor de nieuwsbrief"
 ];

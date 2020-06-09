@@ -12,12 +12,10 @@ class DonateController extends Controller
     public function donate ()
     {
         $donationInfo = Donation_info::all();
-        // dd($donationInfo);
         $donateContent = Donate_content::firstOrFail();
         return view('pages.donate',[
             'donationInfo'=>$donationInfo,
             'donateContent' =>$donateContent,
-            
         ]);
     }
         public function getSucces(){
@@ -36,15 +34,11 @@ class DonateController extends Controller
             "redirectUrl" => route('donate.succespayment', app()->getLocale()),
             "webhookUrl" => route('webhooks.mollie'),
             "metadata" => [
-                // "donatorname" => $r->donatorname,
-                // "donatoremail" => $r->donatoremail,
-                // "donatoramount" => $r->donatoramount,
-                // "description" => $r->donatormessage,
-
             ],
         ]);
         $payment = Mollie::api()->payments->get($payment->id);
         
+        // store data back in to 
         $donator = [
             "donatorname" => $r->donatorname,
             "donatoremail" => $r->donatoremail,
