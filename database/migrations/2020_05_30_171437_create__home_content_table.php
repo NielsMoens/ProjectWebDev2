@@ -17,6 +17,9 @@ class CreateHomeContentTable extends Migration
             $table->id();
             $table->text('title_nl');
             $table->text('title_en');
+            $table->text('maininfo_nl');
+            $table->text('maininfo_en');
+            $table->timestamps();
         });
         
     }

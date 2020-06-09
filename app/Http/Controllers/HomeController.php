@@ -16,7 +16,6 @@ class HomeController extends Controller
     
     public function home()
     {   
-        //firstorfail -> object, get->arra
         $homeContent = Home_content::firstOrFail();
         return view('pages.home',compact('homeContent'));
     }

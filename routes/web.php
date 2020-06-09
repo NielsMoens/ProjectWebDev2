@@ -25,19 +25,24 @@ Route::group(['prefix' => '{language}'], function () {
     //  Routes HomeController
     Route::get('/', 'HomeController@home')->name('home');
     Route::get('/about', 'HomeController@about')->name('about');
-    Route::get('/contact', 'HomeController@contact')->name('contact');
+    Route::get('/contact', 'ContactController@contact')->name('contact');
+    Route::post('/contact', 'ContactController@postContact')->name('contact.post');
     Route::get('/privacy', 'HomeController@privacy')->name('privacy');
+
     //  newsblog
     Route::get('/newsblog', 'NewsblogController@newsblog')->name('newsblog');
     Route::get('/newsblog/detailpage', 'NewsblogController@detailpage')->name('detailpage');
-    //  Route::get('/{slug}', 'PagesController@getPage')->name('page');
+
     Route::get('/donate', 'DonateController@donate')->name('donate');
     //  Route::post('/donate', 'DonateController@postDonate')->name('donate.post');
     Route::post('/donate', 'DonateController@postDonatePayment')->name('donate.payment');
     Route::get('/donate/paymentsucces', 'DonateController@getSucces')->name('donate.succespayment');
+    Route::get('/newsletter', 'NewsletterController@subscribedNewsletter')->name('newsletter.subscribed');
 });
+
 Route::post('/newsletter', 'NewsletterController@postNewsletter')->name('newsletter.post');
-Route::get('/newsletter/subscribed', 'NewsletterController@subscribedNewsletter')->name('newsletter.subscribed');
+
+    
 
 // Admin page routes 
 Route::group(['prefix' => 'admin'], function () {
@@ -81,6 +86,4 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/pages/editprivacy/{privacy}', 'AdminController@getEditPrivacy')->name('pages.editprivacy');
     Route::post('/pages/editprivacy/{privacy}', 'AdminController@postEditPrivacy')->name('pages.editprivacy.post');
 });
-// Route::post('/home', 'HomeController@home')->name('home');
-// Route::get('/{slug}', 'PagesController@getPage')->name('page');
 

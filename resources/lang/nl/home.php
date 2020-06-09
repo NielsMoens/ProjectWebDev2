@@ -28,6 +28,7 @@ return [
     "phone" => "Telefoonnummer",
     "message" => "Beschijving",
     "amount" => "Donatie bedrag:",
+    "subject" => "Onderwerp",
 
     //donation
     "donmessage"=>"Bericht:",

@@ -31,6 +31,7 @@ return [
     "phone" => "Phone",
     "message" => "Message",
     "amount" => "Donation amount",
+    "subject" => "Subject",
 
     //donation
     "donmessage"=>"Message:",

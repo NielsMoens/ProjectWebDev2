@@ -24,7 +24,7 @@ class NewsletterController extends Controller
         } else{
             Newsletter::subscribe($r->email);
         }
-        return redirect()->route('home', app()->getLocale())->with('status', 'Thanks for subscribing');
+        return redirect()->route('newsletter.subscribed', app()->getLocale());
     }
 
     public function subscribedNewsletter(){
