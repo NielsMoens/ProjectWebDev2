@@ -24,7 +24,6 @@ return [
     "h_newsblog" => "Newsblog",
     "h_admin" => "Admin",
     
-
     //forms
     "name" => "Name",
     "email" => "Email",
@@ -32,9 +31,11 @@ return [
     "message" => "Message",
     "amount" => "Donation amount",
     "subject" => "Subject",
+    "consucces"=> "Thanks for contacting us!",
 
     //donation
     "donmessage"=>"Message:",
+    "donSucces"=>"Thanks for donating!",
 
     //newsletter
     "subs"=>"Thanks for subscribing"

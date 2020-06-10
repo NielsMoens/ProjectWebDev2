@@ -29,6 +29,8 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    //  Admin Controller :Check all data in db & return all the views
     public function adminPage()
     {   
         $pages = Page::all();
@@ -50,17 +52,15 @@ class AdminController extends Controller
         ]);
     }
 
+    //  create page Controller
     public function getCreatePage()
     {   
         $pages = Page::all();
         return view('adminDashboard.pages.create', []);
     }
 
-
-
     public function postCreatePage(Request $r)
     {   
-        // dd($r);
         $page = new Page();
         $page->template = $r->template;
         $page->title_nl = $r->title_nl;
@@ -76,6 +76,7 @@ class AdminController extends Controller
         return redirect()->route('admin');
     }
 
+    // edit a page
     public function getEditPage(Page $page)
     {   
         return view ('adminDashboard.pages.edit',[
@@ -101,6 +102,7 @@ class AdminController extends Controller
         return redirect()->route('admin');
     }
 
+    //  delete a page
     public function postDeletePage(request $r)
     {
         Page::find($r->id)->delete();

@@ -1,10 +1,7 @@
 @extends('layout')
 
 @section('content')
-
-
-{{-- {{dd($donationInfo->donatoramount)}} --}}
-
+<!-- Donate page Content -->
 <section style="min-height: 50vh;" class="page-section" id="contact">
     <div class="container">
         <div class="text-center">

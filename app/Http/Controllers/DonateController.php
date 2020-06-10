@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class DonateController extends Controller
 {
+    //  Donate Controller
     public function donate ()
     {
         $donationInfo = Donation_info::all();
@@ -19,9 +20,9 @@ class DonateController extends Controller
         ]);
     }
         public function getSucces(){
-        dd('Payment succesful');
+        return view('pages.donatesucces');
     }
-
+    // mollie payment 
     public function postDonatePayment(Request $r)
     {
         $amount = number_format ($r->donatoramount ,2);
@@ -38,7 +39,7 @@ class DonateController extends Controller
         ]);
         $payment = Mollie::api()->payments->get($payment->id);
         
-        // store data back in to 
+        // store data back in db
         $donator = [
             "donatorname" => $r->donatorname,
             "donatoremail" => $r->donatoremail,

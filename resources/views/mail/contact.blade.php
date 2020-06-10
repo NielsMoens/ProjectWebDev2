@@ -12,9 +12,7 @@
 </head>
 
 <body>
-
-    
-
+    {{-- contact form design --}}
     <table class="body">
         <tr>
             <td align="center" class="center" valign="top">

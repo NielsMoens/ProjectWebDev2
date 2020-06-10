@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+<!-- Privacy page Content -->
 <div style="padding: 156px 0 100px;"class="bg-primary text-white">
     <div class="container text-center">
         <h1>{!!$privacyContent->{"title_".App::getLocale()}!!}</h1>

@@ -1,3 +1,4 @@
+<!-- Footer Content -->
 <footer class="footer text-center">
     @if (session('status'))
     <div class="alert alert-succes">
@@ -9,7 +10,7 @@
             <!-- Footer Newsblog-->
             <div class="col-lg-4 mb-5 mb-lg-4">
                 <h4 class="mb-4">{{__('home.f_newsletter')}}</h4>
-            
+
                 <form action="{{ url('newsletter') }}" method="post">
                     @csrf
                     <div class="form-group">
@@ -40,6 +41,12 @@
 <div class="container"><small class="pre-wrap">Copyright © Niels Moens 2020</small></div>
 
 <!-- Bootstrap core JS-->
+<script>
+    $(function () {
+        $('.selectpicker').selectpicker();
+    });
+</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 <!-- Third party plugin JS-->

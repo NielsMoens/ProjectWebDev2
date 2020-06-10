@@ -56,9 +56,13 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route('home', app()->getLocale())}}">
+                    <i class="fas fa-home"></i>
+                    <span>ReturnToWebsite</span></a>
+            </li>
         </ul>
         <!-- End of Sidebar -->
 
@@ -89,7 +93,6 @@
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                             document.getElementById('logout-form').submit();">

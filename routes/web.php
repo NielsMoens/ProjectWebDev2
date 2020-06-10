@@ -28,21 +28,17 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/contact', 'ContactController@contact')->name('contact');
     Route::post('/contact', 'ContactController@postContact')->name('contact.post');
     Route::get('/privacy', 'HomeController@privacy')->name('privacy');
-
     //  newsblog
     Route::get('/newsblog', 'NewsblogController@newsblog')->name('newsblog');
-    Route::get('/newsblog/detailpage', 'NewsblogController@detailpage')->name('detailpage');
+    Route::get('/newsblog/{newsblog}', 'NewsblogController@detailpage')->name('detailpage');
 
     Route::get('/donate', 'DonateController@donate')->name('donate');
-    //  Route::post('/donate', 'DonateController@postDonate')->name('donate.post');
     Route::post('/donate', 'DonateController@postDonatePayment')->name('donate.payment');
     Route::get('/donate/paymentsucces', 'DonateController@getSucces')->name('donate.succespayment');
+
     Route::get('/newsletter', 'NewsletterController@subscribedNewsletter')->name('newsletter.subscribed');
 });
-
 Route::post('/newsletter', 'NewsletterController@postNewsletter')->name('newsletter.post');
-
-    
 
 // Admin page routes 
 Route::group(['prefix' => 'admin'], function () {

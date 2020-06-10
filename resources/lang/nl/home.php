@@ -29,9 +29,11 @@ return [
     "message" => "Beschijving",
     "amount" => "Donatie bedrag:",
     "subject" => "Onderwerp",
+    "consucces"=> "Bedankt om contact met ons op de nemen!",
 
     //donation
     "donmessage"=>"Bericht:",
+    "donSucces"=>"Bedankt voor u donatie !",
 
     //newsletter
     "subs"=>"Bedankt voor u aan te melden voor de nieuwsbrief"

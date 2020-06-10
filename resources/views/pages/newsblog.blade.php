@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-
+<!-- Blog page Content -->
 <div class=" container">
     <!-- Blog Entries Column -->
     <div class="col-md-12">
@@ -14,7 +14,13 @@
                 <div class="card-body">
                     <h2 class="card-title">{!!$nwsContent->{"posttitle_".App::getLocale()}!!}</h2>
                     <p class="card-text">{!!$nwsContent->{"postcontent_".App::getLocale()}!!}</p>
-                    <a href="" class="btn btn-primary">{{__('home.details')}}</a>
+                    <a href="{{url(App::getLocale().'/newsblog', $nwsContent->id)}}">
+                        @csrf
+                        <input type="hidden" name="" value="">
+                        <button class="btn-success">
+                            {{__('home.details')}}
+                        </button>
+                    </a>
                 </div>
                 <div class="card-footer text-muted">
                     {{__('home.postedon')}} {{$nwsContent->postdate}}

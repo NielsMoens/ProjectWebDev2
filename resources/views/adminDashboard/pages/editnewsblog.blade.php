@@ -6,7 +6,6 @@
         selector: 'textarea',
         height: "500"
     });
-    
 </script>
 @endsection
 
@@ -42,7 +41,7 @@
                 </div>
                 <div class="form-group">
                     <label for="postdate">postdate</label>
-                    <textarea name="postdate" id="postdate">{{$newsblog->postdate}}</textarea>
+                    <input type="text" class="postdate" name="postdate" id="postdate" placeholder="Place date here"> {{$newsblog->postdate}}</input>
                 </div>
                 <button class="btn btn-danger" type="submit">
                     {{__('home.button')}}

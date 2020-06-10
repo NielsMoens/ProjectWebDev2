@@ -2,6 +2,7 @@
 @extends('layout')
 
 @section('content')
+<!-- Content Contact page -->
 <section style="min-height: 50vh;" class="page-section" id="contact">
     <div class="container">
         <div class="text-center">

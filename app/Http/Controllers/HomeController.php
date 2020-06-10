@@ -13,7 +13,7 @@ use newsletter;
 
 class HomeController extends Controller
 {
-    
+    // fetch data from model en return the right view
     public function home()
     {   
         $homeContent = Home_content::firstOrFail();

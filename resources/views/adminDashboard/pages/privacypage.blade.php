@@ -22,7 +22,6 @@
         <div class="col">
             <form action="{{route('pages.edit', $page->id)}}" method="post">
                 @csrf
-
                 <input type="hidden" name="id" value="{{ $page->id }}">
                 <div class="form-group">
                     <label for="title_nl">Title_nl</label>

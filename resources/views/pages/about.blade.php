@@ -2,6 +2,7 @@
 @extends('layout')
 
 @section('content')
+<!-- Content About page -->
 <div style="padding: 156px 0 100px;"class="bg-primary text-white">
     <div class="container text-center">
         <h1>{!!$aboutContent->{"title_".App::getLocale()}!!}</h1>

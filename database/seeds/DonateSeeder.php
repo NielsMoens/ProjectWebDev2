@@ -21,8 +21,6 @@ class DonateSeeder extends Seeder
         $donate->subtitle_en = $faker->text(20);
         $donate->featuredtitle_nl = $faker->text(20);
         $donate->featuredtitle_en = $faker->text(20);
-        // $donate->donatorname = $faker->name;
-        // $donate->donationamount = rand(100, 999);
 
         $donate->save();
     }
