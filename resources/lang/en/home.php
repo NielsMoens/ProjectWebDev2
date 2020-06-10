@@ -9,7 +9,7 @@ return [
      //buttons
     "button"=>"Submit",
     "details"=>"Read more",
-    "sendm"=>"Verzenden",
+    "sendm"=>"Send",
     "donate"=>"Donate",
 
     //footer

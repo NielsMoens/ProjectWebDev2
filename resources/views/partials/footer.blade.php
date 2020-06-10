@@ -14,10 +14,9 @@
                 <form action="{{ url('newsletter') }}" method="post">
                     @csrf
                     <div class="form-group">
-                        <label for="exampleInputEmail">Email</label>
                         <input type="email" name="email" id="exampleInputEmail" class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">{{__('home.button')}}</button>
                 </form>
             </div>
             <!-- Footer Social Icons-->
@@ -34,7 +33,6 @@
                 <a class="pre-wrap text-white lead mb-0"
                     href="{{ route('privacy', ['language' => app()->getLocale()])}}">{{__('home.f_terms')}}</a>
             </div>
-
         </div>
     </div>
 </footer>

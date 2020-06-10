@@ -55,7 +55,7 @@
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                             href="{{ route('admin', ['language' => app()->getLocale()])}}">{{__('home.h_admin')}}</a>
                     </li>
-                    {{-- <li class="nav-item mx-0 mx-lg-1">
+                    <li class="nav-item mx-0 mx-lg-1">
                         <div class="dropdown show">
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -66,7 +66,7 @@
                                 <a class="dropdown-item" href="{{route(Route::currentRouteName(), ['language'=>'en'])}}">Engels</a>
                             </div>
                         </div>
-                    </li> --}}
+                    </li>
                 </ul>
             </div>
         </div>
